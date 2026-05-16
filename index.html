@@ -201,13 +201,14 @@ section{padding:88px 24px}
 #why{background:var(--light)}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .why-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s}
-.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue)}
-.why-icon{width:56px;height:56px;background:var(--blue-50);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(29,78,216,.13);border-color:var(--blue)}
+.why-icon{width:56px;height:56px;background:var(--blue-50);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;transition:background .25s,transform .25s}
+.why-card:hover .why-icon{background:rgba(29,78,216,.14);transform:scale(1.1)}
 .why-icon svg{width:28px;height:28px;color:var(--blue)}
 .why-title{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:7px}
 .why-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.why-num{position:absolute;top:13px;right:14px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--blue);opacity:.22;letter-spacing:.04em;pointer-events:none}
 @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.why-grid{grid-template-columns:1fr}}
 
 /* ===== PROCESS ===== */
 #process{background:var(--dark)}
@@ -712,19 +713,20 @@ footer{color:#fff}
   .srv-desc{grid-column:2;grid-row:2;font-size:13px}
   .srv-tag{grid-column:2;grid-row:3;margin-top:8px}
 
-  /* Why — horizontal layout for compactness */
-  .why-grid{grid-template-columns:1fr}
+  /* Why — 2-col compact vertical cards (prevents title word-wrap) */
+  .why-grid{grid-template-columns:1fr 1fr;gap:10px}
   .why-card{
     display:flex;
-    flex-direction:row;
-    align-items:flex-start;
+    flex-direction:column;
     text-align:left;
-    gap:14px;
-    padding:16px 18px;
+    padding:16px 13px;
   }
-  .why-icon{margin:0;flex-shrink:0}
-  .why-title{font-size:14px;margin-bottom:4px}
-  .why-desc{font-size:13px}
+  .why-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 5px)}
+  .why-icon{width:38px;height:38px;border-radius:10px;margin:0 0 10px 0;flex-shrink:0}
+  .why-icon svg{width:18px;height:18px}
+  .why-title{font-size:12.5px;line-height:1.35;margin-bottom:5px}
+  .why-desc{font-size:11.5px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .why-num{top:10px;right:10px;font-size:9px}
 
   /* Process */
   .process-step{
@@ -830,10 +832,13 @@ footer{color:#fff}
 .count-num.pop{animation:count-pop .35s ease}
 @keyframes count-pop{0%{transform:scale(1.25)}100%{transform:scale(1)}}
 
-/* ===== WHY CARD hover gradient border ===== */
+/* ===== WHY CARD hover effects ===== */
 .why-card{position:relative;overflow:hidden}
-.why-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(29,78,216,.04),rgba(249,115,22,.03));opacity:0;transition:opacity .3s;pointer-events:none}
+.why-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(29,78,216,.06) 0%,rgba(249,115,22,.04) 100%);opacity:0;transition:opacity .3s;pointer-events:none}
 .why-card:hover::before{opacity:1}
+/* Shine sweep on hover */
+.why-card::after{content:'';position:absolute;top:-60%;left:-60%;width:40%;height:220%;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);transform:skewX(-20deg);transition:left .55s ease;pointer-events:none;z-index:1}
+.why-card:hover::after{left:130%}
 
 /* ===== PROCESS step icon pulse ===== */
 .process-num{position:relative}
@@ -1126,9 +1131,10 @@ footer{color:#fff}
       <h2 class="sec-title">7 Reasons Waukesha Trusts Jeff</h2>
       <p class="sec-desc">Real reasons from real customers &mdash; not marketing fluff.</p>
     </div>
-    <div class="why-grid fade-up">
+    <div class="why-grid">
 
-      <div class="why-card">
+      <div class="why-card fade-up">
+        <span class="why-num" aria-hidden="true">01</span>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
@@ -1136,7 +1142,8 @@ footer{color:#fff}
         <p class="why-desc">Jeff personally answers calls at midnight, on weekends, and on holidays. No runaround, no voicemail.</p>
       </div>
 
-      <div class="why-card">
+      <div class="why-card fade-up" style="transition-delay:.08s">
+        <span class="why-num" aria-hidden="true">02</span>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
@@ -1144,7 +1151,8 @@ footer{color:#fff}
         <p class="why-desc">Same-night dispatch confirmed in reviews. One customer called at midnight and Jeff was there by 12:30 AM.</p>
       </div>
 
-      <div class="why-card">
+      <div class="why-card fade-up" style="transition-delay:.16s">
+        <span class="why-num" aria-hidden="true">03</span>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
@@ -1152,7 +1160,8 @@ footer{color:#fff}
         <p class="why-desc">One customer has used Cox Plumbing for 16 years straight. That level of trust is earned, not advertised.</p>
       </div>
 
-      <div class="why-card">
+      <div class="why-card fade-up" style="transition-delay:.24s">
+        <span class="why-num" aria-hidden="true">04</span>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/><path d="M14.05 2a9 9 0 018 7.94"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
@@ -1160,7 +1169,8 @@ footer{color:#fff}
         <p class="why-desc">You speak directly with Jeff &mdash; no dispatcher, no hold music, no callbacks. Personal service from call to completion.</p>
       </div>
 
-      <div class="why-card">
+      <div class="why-card fade-up" style="transition-delay:.32s">
+        <span class="why-num" aria-hidden="true">05</span>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
         </div>
@@ -1168,7 +1178,8 @@ footer{color:#fff}
         <p class="why-desc">Transparent quotes before work begins. No surprise fees, no pressure. Customers consistently praise the value.</p>
       </div>
 
-      <div class="why-card">
+      <div class="why-card fade-up" style="transition-delay:.40s">
+        <span class="why-num" aria-hidden="true">06</span>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
@@ -1176,7 +1187,8 @@ footer{color:#fff}
         <p class="why-desc">Experienced with vintage plumbing systems including 70-year-old cast iron pipes. No job is too old or too complicated.</p>
       </div>
 
-      <div class="why-card">
+      <div class="why-card fade-up" style="transition-delay:.48s">
+        <span class="why-num" aria-hidden="true">07</span>
         <div class="why-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
