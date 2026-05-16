@@ -380,33 +380,68 @@ section{padding:88px 24px}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
 
 /* ===== FOOTER ===== */
-footer{background:var(--dark);color:#fff;padding:64px 24px 32px}
+footer{color:#fff}
+/* Emergency CTA Strip */
+.ft-emergency{background:linear-gradient(100deg,#c2410c 0%,#ea580c 40%,#f97316 100%);padding:36px 24px}
+.ft-emg-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.ft-emg-left{}
+.ft-emg-eyebrow{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:6px}
+.ft-emg-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,40px);letter-spacing:.03em;color:#fff;line-height:1;margin-bottom:6px}
+.ft-emg-badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ft-emg-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.85);font-weight:600}
+.ft-emg-badge svg{width:13px;height:13px;flex-shrink:0}
+.ft-emg-phone{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#c2410c;font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3.5vw,34px);letter-spacing:.04em;padding:14px 32px;border-radius:100px;text-decoration:none;box-shadow:0 6px 28px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s;white-space:nowrap;flex-shrink:0}
+.ft-emg-phone:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.3)}
+.ft-emg-phone svg{width:22px;height:22px;flex-shrink:0}
+/* Main body */
+.ft-body{background:#070c18;padding:60px 24px 44px}
 .ft-inner{max-width:1200px;margin:0 auto}
-.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.ft-logo-icon{width:38px;height:38px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.ft-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.3fr;gap:52px;margin-bottom:48px}
+.ft-logo{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.ft-logo-icon{width:42px;height:42px;background:var(--blue);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ft-logo-icon svg{width:22px;height:22px;color:#fff}
-.ft-logo-name{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em}
-.ft-brand-desc{font-size:14px;color:#64748b;line-height:1.7;margin-bottom:20px;max-width:280px}
-.ft-24badge{display:inline-flex;align-items:center;gap:7px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.25);border-radius:100px;padding:5px 12px;font-size:12px;color:var(--orange);font-weight:700}
-.ft-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:16px}
-.ft-links{display:flex;flex-direction:column;gap:9px}
-.ft-links a{font-size:14px;color:#94a3b8;transition:color .2s}
-.ft-links a:hover{color:#fff}
-.ft-cinfo{display:flex;flex-direction:column;gap:12px}
-.ft-ci{display:flex;align-items:flex-start;gap:10px}
-.ft-ci svg{width:16px;height:16px;color:var(--blue);flex-shrink:0;margin-top:2px}
-.ft-ci span{font-size:14px;color:#94a3b8;line-height:1.5}
-.ft-ci a{color:#94a3b8}
-.ft-ci a:hover{color:#fff}
-.ft-div{height:1px;background:rgba(255,255,255,.07);margin-bottom:24px}
-.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.ft-copy{font-size:13px;color:#475569}
-.ft-bottom-links{display:flex;gap:20px}
-.ft-bottom-links a{font-size:13px;color:#475569;transition:color .2s}
-.ft-bottom-links a:hover{color:#fff}
-@media(max-width:900px){.ft-top{grid-template-columns:1fr 1fr}}
-@media(max-width:580px){.ft-top{grid-template-columns:1fr}}
+.ft-logo-name{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.25}
+.ft-logo-sub{font-size:11px;color:#475569;font-weight:400;margin-top:1px}
+.ft-brand-desc{font-size:13.5px;color:#475569;line-height:1.75;margin-bottom:24px;max-width:275px}
+.ft-trust{display:flex;flex-direction:column;gap:9px}
+.ft-trust-item{display:flex;align-items:center;gap:9px;font-size:12.5px;color:#64748b}
+.ft-trust-check{width:18px;height:18px;background:rgba(29,78,216,.15);border:1px solid rgba(29,78,216,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft-trust-check svg{width:9px;height:9px;color:var(--blue)}
+.ft-col-title{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#334155;margin-bottom:18px;display:flex;align-items:center;gap:9px}
+.ft-col-title::before{content:'';display:block;width:14px;height:2px;background:var(--orange);border-radius:2px;flex-shrink:0}
+.ft-links{display:flex;flex-direction:column;gap:10px}
+.ft-links a{font-size:13.5px;color:#475569;transition:color .2s,transform .2s;display:inline-block}
+.ft-links a:hover{color:#cbd5e1;transform:translateX(4px)}
+.ft-cinfo{display:flex;flex-direction:column;gap:14px}
+.ft-ci{display:flex;align-items:flex-start;gap:11px}
+.ft-ci-icon{width:32px;height:32px;background:rgba(29,78,216,.1);border:1px solid rgba(29,78,216,.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ft-ci-icon svg{width:14px;height:14px;color:var(--blue)}
+.ft-ci-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#334155;margin-bottom:2px}
+.ft-ci-val{font-size:13px;color:#64748b;line-height:1.55}
+.ft-ci-val a{color:#94a3b8;font-weight:600;transition:color .2s}
+.ft-ci-val a:hover{color:#fff}
+/* Service area strip */
+.ft-area{border-top:1px solid rgba(255,255,255,.05);padding:14px 24px;background:#060b16}
+.ft-area-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ft-area-lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#1e293b;white-space:nowrap;flex-shrink:0}
+.ft-area-list{display:flex;flex-wrap:wrap;gap:0}
+.ft-area-list span{font-size:12.5px;color:#1e293b}
+.ft-area-list span:not(:last-child)::after{content:' \B7 ';margin:0 7px;color:#0f172a}
+/* Bottom bar */
+.ft-bot{background:#030710;padding:16px 24px}
+.ft-bot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-copy{font-size:12px;color:#1e293b}
+.ft-bot-links{display:flex;align-items:center;gap:18px}
+.ft-bot-links a{font-size:12px;color:#1e293b;transition:color .2s}
+.ft-bot-links a:hover{color:#475569}
+.ft-btt{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#1e293b;padding:6px 14px;border:1px solid #0f172a;border-radius:100px;transition:color .2s,border-color .2s}
+.ft-btt:hover{color:#64748b !important;border-color:#1e293b}
+.ft-btt svg{width:11px;height:11px}
+@media(max-width:960px){.ft-top{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:580px){
+  .ft-top{grid-template-columns:1fr;gap:32px}
+  .ft-brand-desc{max-width:100%}
+}
 
 /* ===== BACK TO TOP ===== */
 #back-top{position:fixed;bottom:1.75rem;right:1.75rem;z-index:900;width:44px;height:44px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(29,78,216,.35);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;border:none}
@@ -423,7 +458,8 @@ footer{background:var(--dark);color:#fff;padding:64px 24px 32px}
   section{padding:72px 20px}
   .sec-head{margin-bottom:44px}
   .hero-inner{padding:64px 20px 0;gap:40px}
-  .ft-top{grid-template-columns:2fr 1fr 1fr}
+  .ft-top{grid-template-columns:1.6fr 1fr 1fr}
+  .ft-emergency{padding:28px 20px}
 }
 
 /* ── 768px ── */
@@ -611,10 +647,12 @@ footer{background:var(--dark);color:#fff;padding:64px 24px 32px}
   }
 
   /* FOOTER */
+  .ft-emg-inner{flex-direction:column;align-items:flex-start;gap:20px}
+  .ft-emg-phone{width:100%;justify-content:center}
+  .ft-body{padding:44px 20px 36px}
   .ft-top{grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px}
-  footer{padding:52px 20px 28px}
-  .ft-bottom{flex-direction:column;text-align:center;gap:12px}
-  .ft-bottom-links{justify-content:center}
+  .ft-bot-inner{flex-direction:column;text-align:center;gap:8px}
+  .ft-bot-links{justify-content:center}
 }
 
 /* ── 480px ── */
@@ -719,9 +757,13 @@ footer{background:var(--dark);color:#fff;padding:64px 24px 32px}
   .btn-white,.btn-ghost{font-size:14px;padding:13px 20px}
 
   /* Footer */
-  .ft-top{grid-template-columns:1fr}
+  .ft-emergency{padding:24px 16px}
+  .ft-emg-heading{font-size:clamp(24px,8vw,32px)}
+  .ft-top{grid-template-columns:1fr;gap:28px;margin-bottom:28px}
   .ft-brand-desc{max-width:100%}
-  footer{padding:44px 16px 24px}
+  .ft-body{padding:36px 16px 28px}
+  .ft-area{padding:12px 16px}
+  .ft-bot{padding:14px 16px}
 }
 
 /* ── 360px — tight phones ── */
@@ -1540,66 +1582,167 @@ footer{background:var(--dark);color:#fff;padding:64px 24px 32px}
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="ft-inner">
-    <div class="ft-top">
-      <div>
-        <div class="ft-logo">
-          <div class="ft-logo-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12M12 12C12 12 8 8 8 5a4 4 0 018 0c0 3-4 7-4 7z"/><path d="M5 17c0 2.5 3 4 7 4s7-1.5 7-4"/></svg>
-          </div>
-          <span class="ft-logo-name">Cox Plumbing Co. Inc.</span>
-        </div>
-        <p class="ft-brand-desc">Local, owner-operated plumbing in Waukesha, WI. Jeff answers every call &mdash; day or night &mdash; and treats your home like his own.</p>
-        <div class="ft-24badge"><span class="ann-dot"></span>Open 24 Hours, 7 Days a Week</div>
-      </div>
-      <div>
-        <div class="ft-col-title">Services</div>
-        <div class="ft-links">
-          <a href="#services">Drain &amp; Sewer Cleaning</a>
-          <a href="#services">Pipe Repair &amp; Replacement</a>
-          <a href="#services">24/7 Emergency Service</a>
-          <a href="#services">Water Heater Service</a>
-          <a href="#services">Gas Line Repair</a>
-          <a href="#services">Camera Inspection</a>
-        </div>
-      </div>
-      <div>
-        <div class="ft-col-title">Company</div>
-        <div class="ft-links">
-          <a href="#about">About Jeff</a>
-          <a href="#why">Why Choose Us</a>
-          <a href="#testimonials">Customer Reviews</a>
-          <a href="#faq">FAQ</a>
-          <a href="https://maps.google.com/?cid=17610177355070971289" target="_blank" rel="noopener noreferrer">Google Business</a>
+
+  <!-- Emergency CTA Strip -->
+  <div class="ft-emergency">
+    <div class="ft-emg-inner">
+      <div class="ft-emg-left">
+        <p class="ft-emg-eyebrow">Plumbing Emergency?</p>
+        <p class="ft-emg-heading">We're Available 24 / 7</p>
+        <div class="ft-emg-badges">
+          <span class="ft-emg-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            No Extra Charge
+          </span>
+          <span class="ft-emg-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Licensed &amp; Insured
+          </span>
+          <span class="ft-emg-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Waukesha County
+          </span>
         </div>
       </div>
-      <div>
-        <div class="ft-col-title">Contact</div>
-        <div class="ft-cinfo">
-          <div class="ft-ci">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-            <span><a href="tel:2625426921">(262) 542-6921</a></span>
-          </div>
-          <div class="ft-ci">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>616 E Broadway<br>Waukesha, WI 53186</span>
-          </div>
-          <div class="ft-ci">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Open 24 Hours<br>7 Days a Week</span>
-          </div>
-        </div>
-      </div>
+      <a href="tel:2625426921" class="ft-emg-phone" aria-label="Call Cox Plumbing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        (262) 542-6921
+      </a>
     </div>
-    <div class="ft-div"></div>
-    <div class="ft-bottom">
-      <p class="ft-copy">&copy; 2026 Cox Plumbing Co. Inc. &mdash; Waukesha, WI. All rights reserved.</p>
-      <div class="ft-bottom-links">
-        <a href="#hero">Back to Top</a>
-        <a href="https://maps.google.com/?cid=17610177355070971289" target="_blank" rel="noopener noreferrer">Google Maps</a>
+  </div>
+
+  <!-- Main Footer Body -->
+  <div class="ft-body">
+    <div class="ft-inner">
+      <div class="ft-top">
+
+        <!-- Brand + Trust -->
+        <div>
+          <div class="ft-logo">
+            <div class="ft-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12M12 12C12 12 8 8 8 5a4 4 0 018 0c0 3-4 7-4 7z"/><path d="M5 17c0 2.5 3 4 7 4s7-1.5 7-4"/></svg>
+            </div>
+            <div>
+              <div class="ft-logo-name">Cox Plumbing Co. Inc.</div>
+              <div class="ft-logo-sub">Waukesha, WI</div>
+            </div>
+          </div>
+          <p class="ft-brand-desc">Local, owner-operated plumbing serving Waukesha County since 1997. Jeff answers every call personally &mdash; day or night &mdash; and treats your home like his own.</p>
+          <div class="ft-trust">
+            <div class="ft-trust-item">
+              <span class="ft-trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Licensed &amp; Fully Insured
+            </div>
+            <div class="ft-trust-item">
+              <span class="ft-trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              25+ Years of Experience
+            </div>
+            <div class="ft-trust-item">
+              <span class="ft-trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Owner-Operated Since 1997
+            </div>
+            <div class="ft-trust-item">
+              <span class="ft-trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+              5-Star Google Rated
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <div class="ft-col-title">Services</div>
+          <div class="ft-links">
+            <a href="#services">Drain &amp; Sewer Cleaning</a>
+            <a href="#services">Pipe Repair &amp; Replacement</a>
+            <a href="#services">24/7 Emergency Plumbing</a>
+            <a href="#services">Water Heater Service</a>
+            <a href="#services">Gas Line Repair</a>
+            <a href="#services">Camera Inspection</a>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <div class="ft-col-title">Company</div>
+          <div class="ft-links">
+            <a href="#about">About Jeff</a>
+            <a href="#why">Why Choose Us</a>
+            <a href="#testimonials">Customer Reviews</a>
+            <a href="#process">How It Works</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://maps.google.com/?cid=17610177355070971289" target="_blank" rel="noopener noreferrer">Google Business</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <div class="ft-col-title">Contact</div>
+          <div class="ft-cinfo">
+            <div class="ft-ci">
+              <div class="ft-ci-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              </div>
+              <div>
+                <div class="ft-ci-lbl">Phone</div>
+                <div class="ft-ci-val"><a href="tel:2625426921">(262) 542-6921</a></div>
+              </div>
+            </div>
+            <div class="ft-ci">
+              <div class="ft-ci-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="ft-ci-lbl">Address</div>
+                <div class="ft-ci-val">616 E Broadway<br>Waukesha, WI 53186</div>
+              </div>
+            </div>
+            <div class="ft-ci">
+              <div class="ft-ci-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="ft-ci-lbl">Hours</div>
+                <div class="ft-ci-val">Open 24 Hours<br>7 Days a Week</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.ft-top -->
+    </div><!-- /.ft-inner -->
+  </div><!-- /.ft-body -->
+
+  <!-- Service Area Strip -->
+  <div class="ft-area">
+    <div class="ft-area-inner">
+      <span class="ft-area-lbl">Serving:</span>
+      <div class="ft-area-list">
+        <span>Waukesha</span>
+        <span>Brookfield</span>
+        <span>Pewaukee</span>
+        <span>Delafield</span>
+        <span>Oconomowoc</span>
+        <span>New Berlin</span>
+        <span>Mukwonago</span>
+        <span>Waukesha County</span>
       </div>
     </div>
   </div>
+
+  <!-- Bottom Bar -->
+  <div class="ft-bot">
+    <div class="ft-bot-inner">
+      <p class="ft-copy">&copy; 2026 Cox Plumbing Co. Inc. All rights reserved.</p>
+      <div class="ft-bot-links">
+        <a href="https://maps.google.com/?cid=17610177355070971289" target="_blank" rel="noopener noreferrer">Google Maps</a>
+        <a href="#hero" class="ft-btt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+          Back to Top
+        </a>
+      </div>
+    </div>
+  </div>
+
 </footer>
 
 <!-- Back to Top Button -->
